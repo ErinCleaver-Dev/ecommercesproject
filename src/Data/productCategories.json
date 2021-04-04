@@ -1,0 +1,23 @@
+{ "Categories" : [   
+    {
+        "title" : "HATS",
+        "url" : ""
+    },
+    {
+        "title" : "JAKETS",
+        "url" : ""
+    },
+    {
+        "title" : "SNEAKERS"
+    },
+    {
+        "title" : "MENS",
+        "url" : ""
+    },
+    {
+        "title" : "WOMENS",
+        "url" : ""
+    }
+]
+
+}
