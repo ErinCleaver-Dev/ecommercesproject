@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const MenuItem = ({title, url}) => {
+const MenuItem = ({title, imageUrl, size, linkUrl}) => {
     return (
-        <Container>
-        <Content>
+        <Container >
+        <Image className={size, "background-image"}  style={{
+            backgroundImage: `url(${imageUrl})`
+            }} />
+        <Content className="content" >
             <ProductInfo>
                 <h1 className="title">{title}</h1>
                 <span className="subtitle">Shop Now</span>
@@ -17,6 +20,7 @@ const MenuItem = ({title, url}) => {
 export default MenuItem
 
 const Container = styled.div`
+    
     min-width: 30%;
     height: 240px;
     flex: 1 1 auto;
@@ -25,6 +29,13 @@ const Container = styled.div`
     justify-content: center;
     border: 1px solid black;
     margin: 0 7.5px 15px;
+    overflow: hidden;
+
+   
+
+    &.large {
+        height: 380px;
+    }
 
     &:first-child {
     margin-right: 7.5px;
@@ -33,9 +44,29 @@ const Container = styled.div`
     &:last-child {
     margin-left: 7.5px;
     }
+    &:hover {
+        cursor: pointer;
+
+        & .background-image {
+            transform: scale(1.1);
+            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95)
+        }
+        & .content {
+            opacity: 0.9;
+        }
+    }
 
 `
+const Image = styled.div`
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+`
+
 const Content = styled.div`
+    background-color: white;
+    opacity: 0.7;
     height: 90px;
     padding: 0 25px;
     display: flex;
@@ -43,6 +74,8 @@ const Content = styled.div`
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    position: absolute;
+
 `
 
 const ProductInfo = styled.div`

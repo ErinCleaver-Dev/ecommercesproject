@@ -1,5 +1,5 @@
 import React from 'react'
-import MenuItem from './MenuItem'
+import MenuItem from '../../Components/MenuItem/MenuItem'
 import styled from 'styled-components'
 import ProductCategories from '../../Data/productCategories.json'
 
@@ -9,9 +9,13 @@ const Homepage = () => {
         <Container>
             <MenuDirectory>
             {
-                ProductCategories.Categories.map((category) => (
-                    <MenuItem title = {category.title}>
-                    </MenuItem>
+                ProductCategories.Categories.map(({id,title, imageUrl, size, linkUrl}) => (
+                    <MenuItem 
+                    key = {id}
+                    title = {title}
+                    imageUrl = {imageUrl}
+                    size = {size}
+                    />
                 ))
             }      
             </MenuDirectory>
