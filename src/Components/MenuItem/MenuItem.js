@@ -3,8 +3,8 @@ import styled from 'styled-components'
 
 const MenuItem = ({title, imageUrl, size, linkUrl}) => {
     return (
-        <Container >
-        <Image className={size, "background-image"}  style={{
+        <Container className = {size} >
+        <Image className="background-image"  style={{
             backgroundImage: `url(${imageUrl})`
             }} />
         <Content className="content" >
@@ -44,7 +44,7 @@ const Container = styled.div`
     &:last-child {
     margin-left: 7.5px;
     }
-    &:hover {
+     &:hover {
         cursor: pointer;
 
         & .background-image {
