@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
+import {withRouter} from 'react-router-dom'
 
-const MenuItem = ({title, imageUrl, size, linkUrl}) => {
+const MenuItem = ({title, imageUrl, size, history}) => {
     return (
-        <Container className = {size} >
+        <Container className = {size} onClick={() =>history.push()}>
         <Image className="background-image"  style={{
             backgroundImage: `url(${imageUrl})`
             }} />
@@ -17,7 +18,7 @@ const MenuItem = ({title, imageUrl, size, linkUrl}) => {
     );
 }
 
-export default MenuItem
+export default withRouter(MenuItem);
 
 const Container = styled.div`
     
